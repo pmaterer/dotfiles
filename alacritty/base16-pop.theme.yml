@@ -1,0 +1,27 @@
+# https://raw.githubusercontent.com/aarowill/base16-alacritty/master/colors/base16-pop.yml
+colors:
+  primary:
+    background: '0x000000'
+    foreground: '0xd0d0d0'
+  cursor:
+    text: '0x000000'
+    cursor: '0xd0d0d0'
+  normal:
+    black:   '0x000000'
+    red:     '0xeb008a'
+    green:   '0x37b349'
+    yellow:  '0xf8ca12'
+    blue:    '0x0e5a94'
+    magenta: '0xb31e8d'
+    cyan:    '0x00aabb'
+    white:   '0xd0d0d0'
+  bright:
+    black:   '0x505050'
+    red:     '0xf29333'
+    green:   '0x202020'
+    yellow:  '0x303030'
+    blue:    '0xb0b0b0'
+    magenta: '0xe0e0e0'
+    cyan:    '0x7a2d00'
+    white:   '0xffffff'
+draw_bold_text_with_bright_colors: false

@@ -1,0 +1,46 @@
+jmport:
+  - "~/.config/alacritty/theme.yml"
+
+font:
+  normal:
+    family: Iosevka Nerd Font
+    style: Regular
+  size: 12
+
+hide_cursor_when_typing: true
+live_config_reload: true
+custom_cursor_colors: true
+
+mouse:
+  hints:
+    launcher:
+      program: open
+    modifiers: Command
+
+window:
+  dimensions:
+    columns: 80
+    lines: 24
+  padding:
+    x: 6
+    y: 6
+  decorations: none 
+
+selection:
+  semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
+  save_to_clipboard: true
+
+key_bindings:
+  # tmux
+  # vertical split (C-f |)
+  - { key: D, mods: Command, chars: "\x06\x7c" }
+  # horizontal split (C-f -)
+  - { key: D, mods: Command|Shift, chars: "\x06\x2d" }
+  # switch panes
+  # M-{L, R, U, D}
+  - { key: Right, mods: Command, chars: "\x06\x1b\x5b\x43" }
+  - { key: Up, mods: Command, chars: "\x06\x1b\x5b\x41" }
+  - { key: Left, mods: Command, chars: "\x06\x1b\x5b\x44" }
+  - { key: Down, mods: Command, chars: "\x06\x1b\x5b\x42" }
+  # maximize pane (C-f z)
+  - { key: Return, mods: Command, chars: "\x06\x7a" }
