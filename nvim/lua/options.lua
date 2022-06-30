@@ -1,0 +1,40 @@
+local options = {
+    autoindent = true,
+    backspace = 'indent,eol,start',
+    backup = false,
+    clipboard = 'unnamedplus',
+    cmdheight = 1,
+    conceallevel = 0,
+    encoding = 'utf-8',
+    expandtab = true,
+    fileencoding = 'utf-8',
+    filetype = 'on',
+    foldenable = true,
+    foldlevel = 99,
+    foldmethod = 'syntax',
+    hidden = true,
+    hlsearch = true,
+    ignorecase = true,
+    incsearch = true,
+    number = true,
+    pumheight = 10,
+    ruler = true,
+    shiftround = true,
+    shiftwidth = 2,
+    showcmd = true,
+    smartcase = true,
+    smartindent = true,
+    smarttab = true,
+    softtabstop = 2,
+    splitbelow = true,
+    splitright = true,
+    swapfile = false,
+    syntax = 'on',
+    tabstop = 2,
+    termguicolors = true,
+    wrap = true
+}
+
+for k, v in pairs(options) do vim.opt[k] = v end
+
+vim.cmd [[ colorscheme base16-pop ]]
