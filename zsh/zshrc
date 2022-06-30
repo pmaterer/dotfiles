@@ -1,0 +1,49 @@
+# prompt
+autoload -U colors zsh/terminfo && colors
+PROMPT="%F{blue}%n%f@%F{magenta}%m%f $ "
+RPROMPT="[%~]"
+
+# functions
+export fpath=($ZDOTDIR/functions $fpath)
+autoload -Uz $fpath[1]/*(.:t)
+
+# plugins
+export ZPLUGINDIR="${ZDOTDIR}/plugins"
+plugins=( zsh-users/zsh-syntax-highlighting
+  zsh-users/zsh-autosuggestions
+  zsh-users/zsh-completions
+  hlissner/zsh-autopair
+)
+load-plugins $plugins
+
+# completion
+autoload -Uz compinit && compinit
+zstyle ':completion:*' menu select
+
+# options
+# https://zsh.sourceforge.io/Doc/Release/Options.html#Options
+setopt EXTENDED_HISTORY
+setopt SHARE_HISTORY
+setopt HIST_IGNORE_SPACE
+setopt HIST_VERIFY
+setopt AUTO_PUSHD
+setopt PUSHD_IGNORE_DUPS
+setopt PUSHD_SILENT
+setopt CORRECT
+setopt EXTENDED_GLOB
+
+# path
+path+=( \
+  "${HOME}/bin"
+)
+typeset -U PATH
+
+# etc
+
+source "${ZDOTDIR}/aliases.zsh"
+
+bindkey -e
+
+[ -f "${HOME}/.asdf/asdf.sh" ] && source "${HOME}/.asdf/asdf.sh"
+
+eval "$(direnv hook zsh)"
