@@ -1,0 +1,13 @@
+[alias]
+    br              = branch
+    ci              = commit
+    co              = checkout
+    conflicts       = diff --name-only --diff-filter=U
+    st              = status
+[core]
+    editor          = vim
+[init]
+    defaultBranch   = main
+[user]
+    name            = Patrick Materer
+    email           = materer@protonmail.com
