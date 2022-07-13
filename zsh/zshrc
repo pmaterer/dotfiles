@@ -1,3 +1,7 @@
+if [[ $(uname -m) == "arm64" ]]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
 # prompt
 autoload -U colors zsh/terminfo && colors
 PROMPT="%F{blue}%n%f@%F{magenta}%m%f $ "
@@ -47,3 +51,4 @@ bindkey -e
 [ -f "${HOME}/.asdf/asdf.sh" ] && source "${HOME}/.asdf/asdf.sh"
 
 eval "$(direnv hook zsh)"
+
