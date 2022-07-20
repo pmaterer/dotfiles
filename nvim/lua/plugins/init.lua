@@ -52,8 +52,8 @@ packer.startup(function(use)
     }
 
     use {'fatih/vim-go', cmd = 'GoInstallBinaries'}
-
     use {'LnL7/vim-nix'}
+    use { 'alvan/vim-closetag' }
 
     if packer_bootstrap then require('packer').sync() end
 end)
