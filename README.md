@@ -2,6 +2,10 @@
 
 Patrick Materer's dotfiles.
 
+## Links
+
+* [Dot It Up 🔥](https://github.com/Torbet/Dot-It-Up)
+
 ## zsh
 
 ### Links
