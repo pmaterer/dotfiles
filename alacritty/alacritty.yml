@@ -3,9 +3,9 @@ jmport:
 
 font:
   normal:
-    family: Iosevka Nerd Font
-    style: Regular
-  size: 12
+    family: CozetteVector
+    style: Regular 
+  size: 12 
 
 hide_cursor_when_typing: true
 live_config_reload: true
