@@ -55,5 +55,7 @@ packer.startup(function(use)
     use {'LnL7/vim-nix'}
     use { 'alvan/vim-closetag' }
 
+    use { 'hashivim/vim-terraform' }
+
     if packer_bootstrap then require('packer').sync() end
 end)
