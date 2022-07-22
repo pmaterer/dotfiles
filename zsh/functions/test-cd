@@ -1,0 +1,3 @@
+function test-cd() {
+    echo "it works!"
+  }
