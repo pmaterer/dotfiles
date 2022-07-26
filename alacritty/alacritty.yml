@@ -1,9 +1,9 @@
-jmport:
+import:
   - "~/.config/alacritty/theme.yml"
 
 font:
   normal:
-    family: Iosevka Nerd Font Mono 
+    family: CozetteVector
     style: Regular 
   size: 12 
 

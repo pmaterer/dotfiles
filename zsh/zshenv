@@ -16,3 +16,6 @@ export HISTSIZE=10000
 export SAVEHIST=10000
 
 export VENV_HOME="${HOME}/.venvs"
+
+# wrk
+export AWS_CA_BUNDLE="${HOME}/.certs/FW_BUNDLE.crt"

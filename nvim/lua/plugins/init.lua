@@ -33,7 +33,7 @@ packer.startup(function(use)
         config = function() require('nvim-tree').setup {} end
     }
 
-    use {'chriskempson/base16-vim'}
+    use { 'pineapplegiant/spaceduck' }
 
     -- lsp
     use {'williamboman/nvim-lsp-installer'}
