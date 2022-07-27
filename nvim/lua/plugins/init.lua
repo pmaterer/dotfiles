@@ -33,10 +33,12 @@ packer.startup(function(use)
         config = function() require('nvim-tree').setup {} end
     }
 
+    use {'catppuccin/nvim', as = 'catppuccin'}
     use {'chriskempson/base16-vim'}
 
     -- lsp
-    use {'williamboman/nvim-lsp-installer'}
+    use {'williamboman/mason.nvim'}
+    use {'williamboman/mason-lspconfig.nvim'}
     use {
         'neovim/nvim-lspconfig',
         config = function() require('plugins.config.nvim-lspconfig') end
@@ -53,7 +55,8 @@ packer.startup(function(use)
 
     use {'fatih/vim-go', cmd = 'GoInstallBinaries'}
     use {'LnL7/vim-nix'}
-    use { 'alvan/vim-closetag' }
+    use {'alvan/vim-closetag'}
+    use {'andrejlevkovitch/vim-lua-format'}
 
     if packer_bootstrap then require('packer').sync() end
 end)

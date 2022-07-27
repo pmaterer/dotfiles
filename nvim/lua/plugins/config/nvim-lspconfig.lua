@@ -1,8 +1,9 @@
 -- https://dev.to/vonheikemen/neovim-lsp-setup-nvim-lspconfig-nvim-cmp-4k8e
-local lsp_installer = require("nvim-lsp-installer")
-local lspconfig = require('lspconfig')
+require('mason').setup()
+local mason_lspconfig = require('mason-lspconfig')
+mason_lspconfig.setup()
 
-lsp_installer.setup {}
+local lspconfig = require('lspconfig')
 
 -- hide inline diagnostic info
 vim.diagnostic.config({
@@ -22,11 +23,6 @@ local lsp_defaults = {
 lspconfig.util.default_config = vim.tbl_deep_extend('force', lspconfig.util
                                                         .default_config,
                                                     lsp_defaults)
-
-for _, server in ipairs(lsp_installer.get_installed_servers()) do
-    lspconfig[server.name].setup {}
-end
-
 vim.api.nvim_create_autocmd('User', {
     pattern = 'LspAttached',
     desc = 'LSP actions',
@@ -84,3 +80,20 @@ sign({name = 'DiagnosticSignError', text = '✘'})
 sign({name = 'DiagnosticSignWarn', text = '▲'})
 sign({name = 'DiagnosticSignHint', text = '⚑'})
 sign({name = 'DiagnosticSignInfo', text = 'ℹ️'})
+
+for _, server in ipairs(mason_lspconfig.get_installed_servers()) do
+    if server == 'sumneko_lsp' then
+        lspconfig[server].setup {
+            settings = {
+                Lua = {
+                    diagnostics = {globals = {'vim'}},
+                    workspace = {
+                        library = vim.api.nvim_get_runtime_file("", true)
+                    }
+                }
+            }
+        }
+    else
+        lspconfig[server].setup {}
+    end
+end

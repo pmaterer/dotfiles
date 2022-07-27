@@ -45,3 +45,5 @@ alias tfa='terraform apply tfplan'
 alias tff='terraform fmt'
 
 alias history-stats="history 0 | awk '{print \$2}' | sort | uniq -c | sort -n -r | head"
+
+alias qi='qemu-img'

@@ -3,7 +3,7 @@ local options = {
     backspace = 'indent,eol,start',
     backup = false,
     clipboard = 'unnamedplus',
-    cmdheight = 1,
+    cmdheight = 2,
     conceallevel = 0,
     encoding = 'utf-8',
     expandtab = true,
@@ -37,4 +37,4 @@ local options = {
 
 for k, v in pairs(options) do vim.opt[k] = v end
 
-vim.cmd [[ colorscheme base16-pop ]]
+vim.cmd [[ colorscheme catppuccin ]]
