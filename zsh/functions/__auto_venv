@@ -1,0 +1,8 @@
+function __auto_venv() {
+  local venv_name
+  venv_name=$(basename "$PWD" | tr . -)
+
+  if [[ -d "$VENV_HOME"/"$venv_name" ]]; then
+    source "$VENV_HOME"/"$venv_name"/bin/activate
+  fi
+}

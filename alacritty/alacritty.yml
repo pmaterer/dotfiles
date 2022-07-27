@@ -1,4 +1,4 @@
-jmport:
+import:
   - "~/.config/alacritty/theme.yml"
 
 font:

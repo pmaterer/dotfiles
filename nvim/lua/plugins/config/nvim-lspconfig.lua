@@ -23,6 +23,12 @@ local lsp_defaults = {
 lspconfig.util.default_config = vim.tbl_deep_extend('force', lspconfig.util
                                                         .default_config,
                                                     lsp_defaults)
+for _, server in ipairs(lsp_installer.get_installed_servers()) do
+    lspconfig[server.name].setup {}
+end
+
+lspconfig.pyright.setup {}
+
 vim.api.nvim_create_autocmd('User', {
     pattern = 'LspAttached',
     desc = 'LSP actions',

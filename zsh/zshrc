@@ -11,6 +11,9 @@ RPROMPT="[%~]"
 export fpath=($ZDOTDIR/functions $fpath)
 autoload -Uz $fpath[1]/*(.:t)
 
+autoload -U add-zsh-hook
+add-zsh-hook chpwd __auto_venv
+
 # plugins
 export ZPLUGINDIR="${ZDOTDIR}/plugins"
 plugins=( zsh-users/zsh-syntax-highlighting
@@ -51,8 +54,3 @@ bindkey -e
 [ -f "${HOME}/.asdf/asdf.sh" ] && source "${HOME}/.asdf/asdf.sh"
 
 eval "$(direnv hook zsh)"
-
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"

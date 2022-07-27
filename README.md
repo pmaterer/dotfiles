@@ -14,6 +14,7 @@ Patrick Materer's dotfiles.
 * [A Guide to the Zsh Completion with Examples](https://thevaluable.dev/zsh-completion-guide-examples/)
 * [Configuring Zsh Without Dependencies](https://thevaluable.dev/zsh-install-configure-mouseless/)
 * [Moving to zsh](https://scriptingosx.com/2019/06/moving-to-zsh/)
+* [Switching from pyenv, rbenv, goenv and nvm to asdf](https://jinyuz.dev/2020/07/switching-from-pyenv-rbenv-goenv-and-nvm-to-asdf/)
 
 ## tmux 
 

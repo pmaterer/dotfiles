@@ -33,8 +33,7 @@ packer.startup(function(use)
         config = function() require('nvim-tree').setup {} end
     }
 
-    use {'catppuccin/nvim', as = 'catppuccin'}
-    use {'chriskempson/base16-vim'}
+    use {'pineapplegiant/spaceduck'}
 
     -- lsp
     use {'williamboman/mason.nvim'}
@@ -57,6 +56,8 @@ packer.startup(function(use)
     use {'LnL7/vim-nix'}
     use {'alvan/vim-closetag'}
     use {'andrejlevkovitch/vim-lua-format'}
+
+    use {'hashivim/vim-terraform'}
 
     if packer_bootstrap then require('packer').sync() end
 end)
