@@ -61,3 +61,7 @@ packer.startup(function(use)
 
     if packer_bootstrap then require('packer').sync() end
 end)
+
+local g = vim.g
+g.closetag_filenames = '*.html,*xml'
+g.closetag_filetypes = 'html,xml'
