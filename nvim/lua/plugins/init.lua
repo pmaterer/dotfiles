@@ -1,6 +1,7 @@
 local fn = vim.fn
 local packer_install_path = fn.stdpath('data') ..
                                 '/site/pack/packer/start/packer.nvim'
+local packer_bootstrap = false
 
 if fn.empty(fn.glob(packer_install_path)) > 0 then
     packer_bootstrap = fn.system({
@@ -56,7 +57,6 @@ packer.startup(function(use)
     use {'LnL7/vim-nix'}
     use {'alvan/vim-closetag'}
     use {'andrejlevkovitch/vim-lua-format'}
-
     use {'hashivim/vim-terraform'}
 
     if packer_bootstrap then require('packer').sync() end

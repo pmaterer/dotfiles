@@ -1,11 +1,9 @@
--- https://dev.to/vonheikemen/neovim-lsp-setup-nvim-lspconfig-nvim-cmp-4k8e
+local lspconfig = require('lspconfig')
+
 require('mason').setup()
 local mason_lspconfig = require('mason-lspconfig')
 mason_lspconfig.setup()
 
-local lspconfig = require('lspconfig')
-
--- hide inline diagnostic info
 vim.diagnostic.config({
     virtual_text = false,
     severity_sort = true,
@@ -23,11 +21,6 @@ local lsp_defaults = {
 lspconfig.util.default_config = vim.tbl_deep_extend('force', lspconfig.util
                                                         .default_config,
                                                     lsp_defaults)
-for _, server in ipairs(lsp_installer.get_installed_servers()) do
-    lspconfig[server.name].setup {}
-end
-
-lspconfig.pyright.setup {}
 
 vim.api.nvim_create_autocmd('User', {
     pattern = 'LspAttached',
